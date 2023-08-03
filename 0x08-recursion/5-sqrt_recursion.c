@@ -1,45 +1,29 @@
 #include "main.h"
 
-int tmp_prime(int n, int i);
-
 /**
- * divisors - number is prime?
- * @n: integer params
- * @m: integer params
- * Return: boolean
+ * _sqrt_recursion - main funct
+ * @n: int n
+ * Return: int
  */
-
-int divisors(int n, int m)
+int _sqrt_recursion(int n)
 {
-	if (m % n == 0)
-	{
-		return (0);
-	}
-	else if (m / 2 > n)
-	{
-		return (divisors(n + 2, m));
-	}
-	else
-	{
-		return (1);
-	}
+	return (_sqrt(n, 1));
 }
 
 /**
- * is_prime_number - prime
- * @n: integer params
- * Return: recursion
+ * _sqrt - _sqrt_recursion
+ * @n: integer paramtr
+ * @i: integer parameter
+ * Return: sqrt
  */
-
-int is_prime_number(int n)
+int _sqrt(int n, int i)
 {
-	if ((!(n % 2) && n != 2) || n < 2)
-	{
-		return (0);
-	}
-	else
-	{
-		return (divisors(3, n));
-	}
+	if (n < 0)
+		return (-1);
+	if ((i * i) > n)
+		return (-1);
+	if (i * i == n)
+		return (i);
+	return (_sqrt(n, i + 1));
 }
 
