@@ -26,4 +26,3 @@ int main(void)
     printf("%p\n", (void *)head);
     return (0);
 }
-
